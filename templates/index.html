@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div id="contenedor">
+        <div id="caja1">
+            <!-- Mostrar la temperatura con un formato adecuado -->
+            <h1 id="atura-valor">{{.Main.Temp | printf "%.1f"}} °C</h1>
+
+            <!-- Mostrar la descripción del clima, capitalizando el texto -->
+            <h1 id="temperatura-descripcion">{{ (index .Weather 0).Description }}</h1>
+        </div>
+        <div id="caja2">
+            <h2 id="ubicacion">{{.Name}}</h2>
+            
+            <!-- Mostrar el icono del clima -->
+            <img id="icono-animado" src="https://openweathermap.org/img/wn/{{ (index .Weather 0).Icon }}@2x.png" alt="Weather Icon" height="128" width="128">
+        </div>
+        <div id="caja3">
+            <h3>Veloc. del Viento</h3>
+            
+            <!-- Mostrar la velocidad del viento con un formato adecuado -->
+            <h1 id="viento-velocidad">{{.Wind.Speed | printf "%.1f"}} m/s</h1>
+        </div>
+    </div>
+</body>
+</html>
