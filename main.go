@@ -44,7 +44,7 @@ func weatherHandler(w http.ResponseWriter, r *http.Request) {
 	apiKey := "8c9150bf4cc8eb2d53798608be82e53e" // Aquí puedes colocar tu API Key directamente
 
 	// Ciudad a consultar
-	city := "Mendoza" // Puedes cambiar esta ciudad si lo deseas
+	city := "Cordoba" // Puedes cambiar esta ciudad si lo deseas
 
 	// URL para la consulta a la API (idioma español y unidades métricas)
 	url := fmt.Sprintf("https://api.openweathermap.org/data/2.5/weather?q=%s&appid=%s&lang=es&units=metric", city, apiKey)
